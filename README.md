@@ -17,10 +17,11 @@ $ kubectl get all
 ```
 $ kubectl describe svc flask-app-deployment 
 ```
-**To expose application from external IP address and internet run:**  <br>
+**To expose manually(without running svc yaml file)application and run it from external IP address or internet:**  <br>
 ```
 $ kubectl expose deployment flask-app-deployment --type=NodePort --port=5000 
 ```
+**Getting Url**  <br>
 ```
 $ minikube service flask-app-deployment --url
 ```
