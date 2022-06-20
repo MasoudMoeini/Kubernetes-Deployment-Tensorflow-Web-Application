@@ -7,8 +7,7 @@ $ kubectl apply -f ./run-my-flask-app.yaml
 ```
 $ kubectl apply -f ./flask-app-svc.yaml 
 ```
-**Once application service created to check the resources run:**  
-<br>
+**Once application service created to check the resources run:**  <br>
 ```
 $ kubectl get pod -w 
 ```
