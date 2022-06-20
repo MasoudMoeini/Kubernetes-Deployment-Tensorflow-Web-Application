@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-flask-app-lb
+  name: flask-app-lb
 spec:
   type: LoadBalancer
   selector:
-    app: my-flask-app
-    department: sales
+    app: flask-app
+    #department: sales
   ports:
   - protocol: TCP
     port: 60000

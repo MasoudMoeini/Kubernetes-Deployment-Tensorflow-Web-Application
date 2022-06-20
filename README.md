@@ -20,6 +20,8 @@ kubectl get all
 ```
 kubectl describe svc flask-app-service
 ```
+**Kubernetes support two mthods to export services for external IP-addresses and internet:NodePorts,Loadbalancers**  <br>
+<br>
 **To expose application manually (without running svc yaml file) and run it from external IP address or internet:**  <br>
 ```
 kubectl expose deployment flask-app-deployment --type=NodePort --port=5000 
@@ -29,7 +31,7 @@ kubectl expose deployment flask-app-deployment --type=NodePort --port=5000
 minikube service flask-app-service --url
 ```
 
-**To monitor the execution of service: kubectl logs {pods name}**  <br>
+**To monitor the execution of service: kubectl logs {pod name}**  <br>
 ```
 kubectl logs deployment/flask-app-deployment
 ```
@@ -38,9 +40,14 @@ kubectl logs deployment/flask-app-deployment --follow --tail 1
 ```
 ```
 kubectl describe pod/flask-app-deployment{-548d85c4bc-rtv67*** assigned label by Kubernetes}
+```  
+**To expose service with Loadbalancers to external IP-addresses:**  <br>
+````
+kubectl apply -f ./flask-app-lb.yaml
+````
 ```
-<br>
-
+curl http://$(minikube ip):{lb-Port e.g 31726}
+```
 ## Set up Ingress on Minikube with the NGINX Ingress Controller <br>
 ```
 minikube addons enable ingress 
