@@ -26,9 +26,12 @@ minikube service flask-app-service --url
 ```
 Kubernetes support two mthods to export services for external IP-addresses and internet: 1.NodePorts 2.Loadbalancers  <br>
 
-To expose application manually (without running svc yaml file) and run it from external IP address or internet, we can expose our previous created deployment:  <br>
+To expose application manually (without running svc yaml file) and run it from external IP address or internet:  <br>
 ```
-kubectl expose deployment flask-app-deployment --type=NodePort --port=5000 
+kubectl create deployment flask-web-app --image=masodatc/tensorflow-flask-web-application:01
+kubectl expose deployment flask-web-app --type=NodePort --port=5000 
+kubectl get service flask-web-app 
+minikube service flask-web-app --url
 ```
 **Getting Url from manually set-up**  <br>
 ```
