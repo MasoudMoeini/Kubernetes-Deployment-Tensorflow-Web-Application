@@ -2,20 +2,23 @@
 **Steps:**  <br>
 Clone Repo and **RUN** following command to create deployment and Service in Kubernetes cluster: <br>
 ```
-kubectl apply -f ./run-my-flask-app.yaml 
+kubectl apply -f ./flask-app-deployment.yaml 
+```
+```
+kubectl get pods
 ```
 ```
 kubectl apply -f ./flask-app-svc.yaml 
 ```
 **Once application service created to check the resources run:**  <br>
 ```
-kubectl get pod -w 
+kubectl get pods -w 
 ```
 ```
 kubectl get all 
 ```
 ```
-kubectl describe svc flask-app-deployment 
+kubectl describe svc flask-app-service
 ```
 **To expose application manually (without running svc yaml file) and run it from external IP address or internet:**  <br>
 ```
@@ -23,10 +26,10 @@ kubectl expose deployment flask-app-deployment --type=NodePort --port=5000
 ```
 **Getting Url**  <br>
 ```
-minikube service flask-app-deployment --url
+minikube service flask-app-service --url
 ```
 
-**To monitor the execution of service:**  <br>
+**To monitor the execution of service: kubectl logs {pods name}**  <br>
 ```
 kubectl logs deployment/flask-app-deployment
 ```
