@@ -75,10 +75,10 @@ kubectl create deployment flask-web-app --image=masodatc/tensorflow-flask-web-ap
 kubectl expose deployment flask-web-app --type=NodePort --port=5000 
 ```
 ```
-kubectl get service web 
+kubectl get service flask-web-app 
 ```
 ```
-minikube service web 
+minikube service flask-web-app --url
 ```
 **Create an Ingress:**  <br>
 ```
