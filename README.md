@@ -82,9 +82,14 @@ minikube service flask-web-app --url
 ```
 **Create an Ingress:**  <br>
 ```
-kubectl apply -f https://k8s.io/example-ingress.yaml 
+kubectl apply -f example-ingress.yaml
 ```
 ```
 kubectl get ingress
+```
+Updating /etc/hosts file with "192.168.64.4 hello-world.info" <br>
+- On macOs ->[Introduction](https://help.nexcess.net/en_US/miscellaneous/how-to-find-the-hosts-file-on-my-mac)
+```
+curl hello-world.info
 ```
 
