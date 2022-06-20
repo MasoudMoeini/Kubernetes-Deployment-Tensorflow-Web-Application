@@ -1,13 +1,13 @@
 # Kubenetes Deployment Tensorflow Flask Web Application
 **Steps:**  <br>
-- RUN following command to create deployment and Service in Kubernetes Kluster: <br>
+Clone Repo and **RUN** following command to create deployment and Service in Kubernetes Kluster: <br>
 ```
 $ kubectl apply -f ./run-my-flask-app.yaml 
 ```
 ```
 $ kubectl apply -f ./flask-app-svc.yaml 
 ```
-**Once our application service created to check the resources run:**  
+**Once application service created to check the resources run:**  
 <br>
 ```
 $ kubectl get pod -w 
