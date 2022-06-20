@@ -4,7 +4,7 @@
 $ kubectl apply -f ./run-my-flask-app.yaml <br>
 $ kubectl apply -f ./flask-app-svc.yaml <br>
 <br>
-**Once our application service created to check the resources run:** <br>
+**Once our application service created to check the resources run:**
 - $ kubectl get pod -w <br>
 - $ kubectl get all <br>
 - $ kubectl describe svc flask-app-deployment <br>
