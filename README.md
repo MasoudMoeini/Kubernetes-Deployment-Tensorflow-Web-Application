@@ -1,5 +1,5 @@
 # Kubenetes Deployment Tensorflow Flask Web Application
-**Steps: ** <br>
+**Steps:** <br>
 -RUN following command to create deployment and Service in Kubernetes Kluster <br>
 $ kubectl apply -f ./run-my-flask-app.yaml <br>
 $ kubectl apply -f ./flask-app-svc.yaml <br>
