@@ -26,7 +26,7 @@ minikube service flask-app-service --url
 ```
 Kubernetes support two mthods to export services for external IP-addresses and internet: 1.NodePorts 2.Loadbalancers  <br>
 
-**To expose application manually (without running svc yaml file) and run it from external IP address or internet, we acn expose our previous created deployment:**  <br>
+To expose application manually (without running svc yaml file) and run it from external IP address or internet, we can expose our previous created deployment:  <br>
 ```
 kubectl expose deployment flask-app-deployment --type=NodePort --port=5000 
 ```
