@@ -1,6 +1,6 @@
 # Kubenetes Deployment Tensorflow Flask Web Application
 **Steps:**  <br>
-Clone Repo and **RUN** following command to create deployment and Service in Kubernetes Kluster: <br>
+Clone Repo and **RUN** following command to create deployment and Service in Kubernetes cluster: <br>
 ```
 $ kubectl apply -f ./run-my-flask-app.yaml 
 ```
@@ -17,7 +17,7 @@ $ kubectl get all
 ```
 $ kubectl describe svc flask-app-deployment 
 ```
-**To expose manually(without running svc yaml file)application and run it from external IP address or internet:**  <br>
+**To expose application manually (without running svc yaml file) and run it from external IP address or internet:**  <br>
 ```
 $ kubectl expose deployment flask-app-deployment --type=NodePort --port=5000 
 ```
