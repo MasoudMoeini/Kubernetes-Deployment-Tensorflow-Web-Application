@@ -9,10 +9,11 @@ $ kubectl apply -f ./flask-app-svc.yaml <br>
 - $ kubectl get pod -w <br>
 - $ kubectl get all <br>
 - $ kubectl describe svc flask-app-deployment <br>
+- 
 **To expose application from external IP address and internet run:**  <br>
 - $ kubectl expose deployment flask-app-deployment --type=NodePort --port=5000 <br>
 - $ minikube service flask-app-deployment --url <br>
-<br>
+
 **To monitor the execution of service:**  <br>
 - $ kubectl logs deployment/flask-app-deployment<br>
 - $ kubectl logs deployment/flask-app-deployment --follow --tail 1<br>
