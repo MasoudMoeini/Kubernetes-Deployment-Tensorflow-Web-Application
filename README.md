@@ -32,6 +32,7 @@ Kubernetes support two mthods to export services for external IP-addresses and i
 To deploy and expose application manually (without running svc yaml file) and run it from external IP address or internet:  <br>
 ```
 kubectl create deployment flask-web-app --image=masodatc/tensorflow-flask-web-application:01
+kubectl scale deployment flask-web-app --replicas=3
 kubectl expose deployment flask-web-app --type=NodePort --port=5000 
 kubectl get service flask-web-app 
 minikube service flask-web-app --url
