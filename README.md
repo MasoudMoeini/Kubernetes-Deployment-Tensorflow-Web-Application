@@ -10,7 +10,7 @@ kubectl get pods
 ```
 kubectl apply -f ./flask-app-svc.yaml 
 ```
-**Once application service created to check the resources run:**  <br>
+**Once application service created, to check the resources run:**  <br>
 ```
 kubectl get pods -w 
 ```
@@ -20,15 +20,19 @@ kubectl get all
 ```
 kubectl describe svc flask-app-service
 ```
-**Kubernetes support two mthods to export services for external IP-addresses and internet:NodePorts,Loadbalancers**  <br>
-<br>
-**To expose application manually (without running svc yaml file) and run it from external IP address or internet:**  <br>
+**Getting Application Url**  <br>
+```
+minikube service flask-app-service --url
+```
+Kubernetes support two mthods to export services for external IP-addresses and internet: 1.NodePorts 2.Loadbalancers  <br>
+
+**To expose application manually (without running svc yaml file) and run it from external IP address or internet, we acn expose our previous created deployment:**  <br>
 ```
 kubectl expose deployment flask-app-deployment --type=NodePort --port=5000 
 ```
-**Getting Url**  <br>
+**Getting Url from manually set-up**  <br>
 ```
-minikube service flask-app-service --url
+minikube service flask-app-deployment --url
 ```
 
 **To monitor the execution of service: kubectl logs {pod name}**  <br>
@@ -42,9 +46,12 @@ kubectl logs deployment/flask-app-deployment --follow --tail 1
 kubectl describe pod/flask-app-deployment{-548d85c4bc-rtv67*** assigned label by Kubernetes}
 ```  
 **To expose service with Loadbalancers to external IP-addresses:**  <br>
-````
+```
 kubectl apply -f ./flask-app-lb.yaml
+```
 ````
+kubectl get svc flask-app-lb
+```
 ```
 curl http://$(minikube ip):{lb-Port e.g 31726}
 ```
