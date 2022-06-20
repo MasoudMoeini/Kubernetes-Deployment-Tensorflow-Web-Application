@@ -34,7 +34,6 @@ kubectl expose deployment flask-app-deployment --type=NodePort --port=5000
 ```
 minikube service flask-app-deployment --url
 ```
-
 **To monitor the execution of service: kubectl logs {pod name}**  <br>
 ```
 kubectl logs deployment/flask-app-deployment
@@ -49,7 +48,7 @@ kubectl describe pod/flask-app-deployment{-548d85c4bc-rtv67*** assigned label by
 ```
 kubectl apply -f ./flask-app-lb.yaml
 ```
-````
+```
 kubectl get svc flask-app-lb
 ```
 ```
