@@ -54,6 +54,13 @@ kubectl get svc flask-app-lb
 ```
 curl http://$(minikube ip):{lb-Port e.g 31726}
 ```
+Delete resources <br>
+```
+kubectl delete all --all --all-namespaces
+```
+```
+minikube delete && minikube start --driver=hyperkit
+```
 ## Set up Ingress on Minikube with the NGINX Ingress Controller <br>
 ```
 minikube addons enable ingress 
