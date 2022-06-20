@@ -18,6 +18,9 @@ kubectl get pods -w
 kubectl get all 
 ```
 ```
+kubectl get service flask-app-service 
+```
+```
 kubectl describe svc flask-app-service
 ```
 **Getting Application Url**  <br>
@@ -26,7 +29,7 @@ minikube service flask-app-service --url
 ```
 Kubernetes support two mthods to export services for external IP-addresses and internet: 1.NodePorts 2.Loadbalancers  <br>
 
-To expose application manually (without running svc yaml file) and run it from external IP address or internet:  <br>
+To deploy and expose application manually (without running svc yaml file) and run it from external IP address or internet:  <br>
 ```
 kubectl create deployment flask-web-app --image=masodatc/tensorflow-flask-web-application:01
 kubectl expose deployment flask-web-app --type=NodePort --port=5000 
@@ -72,16 +75,16 @@ minikube addons enable ingress
 kubectl get pods -n ingress-nginx 
 ```
 ```
-kubectl create deployment flask-web-app --image=masodatc/tensorflow-flask-web-application:01
+kubectl apply -f ./flask-app-deployment.yaml 
 ```
 ```
-kubectl expose deployment flask-web-app --type=NodePort --port=5000 
+kubectl apply -f ./flask-app-svc.yaml 
 ```
 ```
-kubectl get service flask-web-app 
+kubectl get service flask-app-service 
 ```
 ```
-minikube service flask-web-app --url
+minikube service flask-app-service --url
 ```
 **Create an Ingress:**  <br>
 ```
