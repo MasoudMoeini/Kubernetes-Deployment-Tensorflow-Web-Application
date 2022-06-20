@@ -69,10 +69,10 @@ minikube addons enable ingress
 kubectl get pods -n ingress-nginx 
 ```
 ```
-kubectl create deployment web --image=masodatc/tensorflow-flask-web-application:01
+kubectl create deployment flask-web-app --image=masodatc/tensorflow-flask-web-application:01
 ```
 ```
-kubectl expose deployment web --type=NodePort --port=8888 
+kubectl expose deployment flask-web-app --type=NodePort --port=5000 
 ```
 ```
 kubectl get service web 
