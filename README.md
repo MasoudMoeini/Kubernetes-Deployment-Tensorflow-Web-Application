@@ -37,5 +37,14 @@ $ kubectl logs deployment/flask-app-deployment --follow --tail 1
 $ kubectl describe pod/flask-app-deployment{-548d85c4bc-rtv67*** assigned label by Kubernetes}
 ```
 <br>
-<br>
-<br>
+# Set up Ingress on Minikube with the NGINX Ingress Controller
+- $ minikube addons enable ingress <br>
+- $ kubectl get pods -n ingress-nginx <br>
+- $ kubectl create deployment web --image=masodatc/tensorflow-flask-web-application:01 <br>
+- $ kubectl expose deployment web --type=NodePort --port=8888 <br>
+- $ kubectl get service web <br>
+- $ minikube service web --url <br>
+**Create an Ingress:**  <br>
+- $ kubectl apply -f https://k8s.io/example-ingress.yaml <br>
+- $ kubectl get ingress
+
