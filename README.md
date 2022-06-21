@@ -32,7 +32,6 @@ Kubernetes support two mthods to export services for external IP-addresses and i
 To deploy and expose application manually (without running svc yaml file) and run it from external IP address or internet:  <br>
 ```
 kubectl create deployment flask-web-app --image=masodatc/tensorflow-flask-web-application:01
-kubectl scale deployment flask-web-app --replicas=3
 kubectl expose deployment flask-web-app --type=NodePort --port=5000 
 kubectl get service flask-web-app 
 minikube service flask-web-app --url
@@ -43,10 +42,10 @@ minikube service flask-web-app --url
 ```
 **To monitor the execution of service: kubectl logs {pod name}**  <br>
 ```
-kubectl logs deployment/flask-app-deployment
+kubectl logs pod/flask-app-deployment
 ```
 ```
-kubectl logs deployment/flask-app-deployment --follow --tail 1
+kubectl logs pod/flask-app-deployment --follow --tail 1
 ```
 ```
 kubectl describe pod/flask-app-deployment{-548d85c4bc-rtv67*** assigned label by Kubernetes}
@@ -56,7 +55,7 @@ kubectl describe pod/flask-app-deployment{-548d85c4bc-rtv67*** assigned label by
 kubectl apply -f ./flask-app-lb.yaml
 ```
 ```
-kubectl get svc flask-app-lb
+kubectl get svc flask-app-deployment
 ```
 ```
 curl http://$(minikube ip):{lb-Port e.g 31726}
