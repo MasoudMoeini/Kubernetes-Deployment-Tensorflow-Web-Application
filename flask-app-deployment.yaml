@@ -16,4 +16,4 @@ spec:
         - name: flask-app
           image: masodatc/tensorflow-flask-web-application:01
           ports:
-            - containerPort: 5000
+            - containerPort: 5000 #must the same with  application image local host port
