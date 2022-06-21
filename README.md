@@ -1,4 +1,4 @@
-# Kubernetes Deployment Tensorflow Flask Web Application
+# Kubernetes Deployment Tensorflow Flask Web Application using Minikube
 **Steps:**  <br>
 Clone Repo and **RUN** following command to create deployment and Service in Kubernetes cluster: <br>
 ```
