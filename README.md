@@ -18,14 +18,14 @@ kubectl get pods -w
 kubectl get all 
 ```
 ```
-kubectl get service flask-app-service 
+kubectl get service flask-app-deployment
 ```
 ```
-kubectl describe svc flask-app-service
+kubectl describe svc flask-app-deployment
 ```
 **Getting Application Url**  <br>
 ```
-minikube service flask-app-service --url
+minikube service flask-app-deployment --url
 ```
 Kubernetes support two mthods to export services for external IP-addresses and internet: 1.NodePorts 2.Loadbalancers  <br>
 
@@ -38,7 +38,7 @@ minikube service flask-web-app --url
 ```
 **Getting Url from manually set-up**  <br>
 ```
-minikube service flask-app-deployment --url
+minikube service flask-web-app --url
 ```
 **To monitor the execution of service: kubectl logs {pod name}**  <br>
 ```
@@ -81,10 +81,10 @@ kubectl apply -f ./flask-app-deployment.yaml
 kubectl apply -f ./flask-app-svc.yaml 
 ```
 ```
-kubectl get service flask-app-service 
+kubectl get service flask-app-deployment
 ```
 ```
-minikube service flask-app-service --url
+minikube service flask-app-deployment --url
 ```
 **Create an Ingress:**  <br>
 ```
