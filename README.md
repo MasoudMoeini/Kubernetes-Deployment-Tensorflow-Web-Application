@@ -98,4 +98,6 @@ Updating /etc/hosts file with "192.168.64.4 hello-world.info" <br>
 ```
 curl hello-world.info
 ```
-
+```
+kubectl describe ingress example-ingress
+```
