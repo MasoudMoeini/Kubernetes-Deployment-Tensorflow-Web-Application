@@ -37,8 +37,8 @@ kubectl scale deployment flask-web-app --replicas 3
 ```
 Scaling a Deployment:
 ```
-kubectl scale deployment/flask-app-deployment --replicas=10
-kubectl autoscale deployment/flask-app-deployment --min=10 --max=15 --cpu-percent=80
+kubectl scale deployment/flask-web-app --replicas=10
+kubectl autoscale deployment/flask-web-app --min=10 --max=15 --cpu-percent=80
 ```
 ```
 kubectl get service flask-web-app 
