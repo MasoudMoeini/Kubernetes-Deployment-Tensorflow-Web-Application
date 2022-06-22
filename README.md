@@ -33,6 +33,14 @@ To deploy and expose application manually (without running svc yaml file) and ru
 ```
 kubectl create deployment flask-web-app --image=masodatc/tensorflow-flask-web-application:01
 kubectl expose deployment flask-web-app --type=NodePort --port=5000 
+kubectl scale deployment flask-web-app --replicas 3
+```
+Scaling a Deployment:
+```
+kubectl scale deployment/flask-app-deployment --replicas=10
+kubectl autoscale deployment/flask-app-deployment --min=10 --max=15 --cpu-percent=80
+```
+```
 kubectl get service flask-web-app 
 minikube service flask-web-app --url
 ```
